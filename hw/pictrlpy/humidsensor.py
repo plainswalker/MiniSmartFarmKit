@@ -6,7 +6,7 @@ import threading
 def name() :
     return "humidity"
 
-sensorloop = threading.Thread(None,ArduinoSerialComm.loop, 'thread_' +  name())
+sensorloop = threading.Thread(None, ArduinoSerialComm.loop, 'thread_' +  name())
 
 def get() :
     if not sensorloop.is_alive():

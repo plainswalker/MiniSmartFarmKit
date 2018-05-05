@@ -9,6 +9,7 @@ GPIO.setmode(GPIO.BCM)
 
 
 def RCtime(RCpin):
+    global DEBUG
     reading = 0
     try:
         GPIO.setup(RCpin, GPIO.OUT)
@@ -26,9 +27,11 @@ def RCtime(RCpin):
     return reading
 
 def getsensorval():
+    global sensorval
     return sensorval
 
 def loop():
+    global sensorval, DEBUG
     while True:
         try:
             sensorval = RCtime(18)
