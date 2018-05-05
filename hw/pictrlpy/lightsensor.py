@@ -12,7 +12,11 @@ def get():
     return CdSphotoresistor.getsensorval()
 
 def run():
-    sensorloop.start()
+    try:
+        sensorloop.start()
+        sensorloop.join()
+    except (KeyboardInterrupt, SystemExit):
+        exit(0)
 
 if __name__ == '__main__':
     run()
