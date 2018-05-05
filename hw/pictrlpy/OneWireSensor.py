@@ -41,7 +41,7 @@ def loop():
     while True:
         try:
             sensorval = read_temp()
-            print(sensorval)
+            if __name__ == '__main__': print(sensorval)
             time.sleep(1)
         except KeyboardInterrupt  as ctrlc:
             exit()

@@ -4,17 +4,26 @@ import tmprsensor
 
 def modules ():
     return [lightsensor, humidsensor, tmprsensor]
-def get(idx = 0) :
-    if idx is not None:
-        mds = modules()
-        rt = []
-        name = None
-        getval = None
-        for md in mds :
+
+def run(name = ''):
+    mds = modules()
+    for md in mds :
+        if name == md.name():
             try :
-                name = md.name()
-                getval = md.get()
+                md.run()
             except Exception as e:
                 print(e)
+    return
+
+def get(name = ''):
+    mds = modules()
+    rt = []
+    for md in mds :
+        if name == md.name():
+            try :
+                getval = md.get()
+            except Exception as e:
+                getval = None
+                print(e)
             rt.append((name, getval))
-        return rt
+    return rt

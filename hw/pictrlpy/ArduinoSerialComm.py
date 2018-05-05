@@ -11,11 +11,11 @@ def loop():
     while True:
         try:
             ardubuff[buffidx] = serialcomm.readline()
-            print(ardubuff[buffidx])
+            if __name__ == '__main__': print(ardubuff[buffidx])
 
             buffidx = (buffidx + 1) % MAX_BUF
         except KeyboardInterrupt as ctrlc:
-            print(ctrlc)
+            if __name__ == '__main__': print(ctrlc)
             exit()
 
 def getsensorval():
