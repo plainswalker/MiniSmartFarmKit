@@ -28,10 +28,14 @@ def RCtime(RCpin):
 def getsensorval():
     return sensorval
 
-while True:
-    try:
-        sensorval = RCtime(18)
-        print(sensorval)  # Read RC timing using pin #18
-    except KeyboardInterrupt as ctrlc:
-        print(ctrlc)
-        exit()
+def loop():
+    while True:
+        try:
+            sensorval = RCtime(18)
+            print(sensorval)  # Read RC timing using pin #18
+        except KeyboardInterrupt as ctrlc:
+            print(ctrlc)
+            exit()
+
+if __name__ == '__main__':
+    loop()

@@ -5,12 +5,12 @@ import tmprsensor
 def modules ():
     return [lightsensor, humidsensor, tmprsensor]
 def get(idx = 0) :
-    if not idx :
+    if idx is not None:
         mds = modules()
         rt = []
         name = None
         getval = None
-        for md in modules :
+        for md in mds :
             try :
                 name = md.name()
                 getval = md.get()
