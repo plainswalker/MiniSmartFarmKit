@@ -2,6 +2,8 @@ import RPi.GPIO as GPIO
 import time
 import os
 
+sensorval = None
+
 DEBUG = 1
 GPIO.setmode(GPIO.BCM)
 
@@ -23,10 +25,13 @@ def RCtime(RCpin):
         reading += 1
     return reading
 
+def getsensorval():
+    return sensorval
 
 while True:
     try:
-        print(RCtime(18))  # Read RC timing using pin #18
+        sensorval = RCtime(18)
+        print(sensorval)  # Read RC timing using pin #18
     except KeyboardInterrupt as ctrlc:
         print(ctrlc)
         exit()

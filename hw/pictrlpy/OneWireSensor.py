@@ -9,6 +9,7 @@ base_dir = '/sys/bus/w1/devices/'
 device_folder = glob.glob(base_dir + '28*')[0]
 device_file = device_folder + '/w1_slave'
 
+sensorval = None
 
 def read_temp_raw():
     f = open(device_file, 'r')
@@ -29,7 +30,14 @@ def read_temp():
         temp_f = temp_c * 9.0 / 5.0 + 32.0
         return temp_c, temp_f
 
+def getsensorval():
+    return sensorval
 
 while True:
-    print(read_temp())
-    time.sleep(1)
+    try:
+        sensorval = read_temp()
+        print(sensorval)
+        time.sleep(1)
+    except KeyboardInterrupt  as ctrlc:
+        print(ctrlc)
+        exit()
