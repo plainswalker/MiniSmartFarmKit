@@ -21,7 +21,7 @@ def run():
         while sensorloop.is_alive():
             pass
     except (KeyboardInterrupt, SystemExit):
-        os._exit(1)
+        os.kill(os.getpgid(), signal.SIGKILL)
 
 if __name__ == '__main__':
     run()
