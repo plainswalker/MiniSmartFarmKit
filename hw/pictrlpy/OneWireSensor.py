@@ -12,6 +12,7 @@ device_file = device_folder + '/w1_slave'
 sensorval = None
 
 def read_temp_raw():
+    global device_file
     f = open(device_file, 'r')
     lines = f.readlines()
     f.close()
@@ -19,6 +20,7 @@ def read_temp_raw():
 
 
 def read_temp():
+    global device_file
     lines = read_temp_raw()
     while lines[0].strip()[-3:] != 'YES':
         time.sleep(0.2)
@@ -31,9 +33,11 @@ def read_temp():
         return temp_c, temp_f
 
 def getsensorval():
+    global sensorval
     return sensorval
 
 def loop():
+    global base_dir, device_file, device_folder, sensorval
     while True:
         try:
             sensorval = read_temp()

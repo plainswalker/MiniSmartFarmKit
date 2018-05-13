@@ -7,6 +7,7 @@ ardubuff = [None] * MAX_BUF
 buffidx = 0
 
 def loop():
+    global MAX_BUF, ardubuff, buffidx
     while True:
         try:
             ardubuff[buffidx] = serialcomm.readline()
@@ -18,6 +19,7 @@ def loop():
             exit()
 
 def getsensorval():
+    global ardubuff, buffidx
     return ardubuff[buffidx]
 
 if __name__ == '__main__':
