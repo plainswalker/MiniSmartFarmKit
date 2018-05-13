@@ -16,12 +16,10 @@ def get():
 
 def run():
     try:
-        sensorloop.start()
         sensorloop.setDaemon(True)
-        while sensorloop.is_alive():
-            pass
+        sensorloop.start()
     except (KeyboardInterrupt, SystemExit):
-        os.kill(os.getpgid(), signal.SIGKILL)
+        exit(0)
 
 if __name__ == '__main__':
     run()
