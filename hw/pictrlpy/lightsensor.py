@@ -1,3 +1,5 @@
+import os
+
 import CdSphotoresistor
 import threading
 import signal
@@ -19,7 +21,7 @@ def run():
         while sensorloop.is_alive():
             pass
     except (KeyboardInterrupt, SystemExit):
-        exit(0)
+        os._exit(1)
 
 if __name__ == '__main__':
     run()
