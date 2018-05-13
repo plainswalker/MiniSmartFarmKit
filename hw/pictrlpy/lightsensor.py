@@ -1,5 +1,6 @@
 import CdSphotoresistor
 import threading
+import signal
 
 def name():
     return "illuminance"
@@ -14,7 +15,7 @@ def get():
 def run():
     try:
         sensorloop.start()
-        sensorloop.join()
+        signal.pause()
     except (KeyboardInterrupt, SystemExit):
         exit(0)
 

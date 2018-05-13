@@ -1,6 +1,6 @@
 import ArduinoSerialComm
 import threading
-
+import signal
 
 
 def name() :
@@ -16,7 +16,7 @@ def get() :
 def run():
     try:
         sensorloop.start()
-        sensorloop.join()
+        signal.pause()
     except (KeyboardInterrupt, SystemExit):
         exit(0)
 

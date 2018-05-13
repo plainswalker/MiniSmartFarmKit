@@ -44,7 +44,6 @@ def loop():
             print(sensorval)
             time.sleep(1)
         except KeyboardInterrupt  as ctrlc:
-            print(ctrlc)
             exit()
 
 if __name__ == '__main__':
