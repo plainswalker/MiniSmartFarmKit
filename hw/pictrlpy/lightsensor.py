@@ -15,6 +15,7 @@ def get():
 def run():
     try:
         sensorloop.start()
+        sensorloop.setDaemon(True)
         signal.pause()
     except (KeyboardInterrupt, SystemExit):
         exit(0)
