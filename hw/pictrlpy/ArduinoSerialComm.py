@@ -6,12 +6,19 @@ MAX_BUF = 20
 ardubuff = [None] * MAX_BUF
 buffidx = 0
 
-while True:
-    try:
-        ardubuff[buffidx] = serialcomm.readline()
-        print(ardubuff[buffidx])
+def loop():
+    while True:
+        try:
+            ardubuff[buffidx] = serialcomm.readline()
+            print(ardubuff[buffidx])
 
-        buffidx = (buffidx + 1) % MAX_BUF
-    except KeyboardInterrupt as ctrlc:
-        print(ctrlc)
-        exit()
+            buffidx = (buffidx + 1) % MAX_BUF
+        except KeyboardInterrupt as ctrlc:
+            print(ctrlc)
+            exit()
+
+def getsensorval():
+    return ardubuff[buffidx]
+
+if __name__ == '__main__':
+    loop()

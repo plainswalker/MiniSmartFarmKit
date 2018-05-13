@@ -33,11 +33,15 @@ def read_temp():
 def getsensorval():
     return sensorval
 
-while True:
-    try:
-        sensorval = read_temp()
-        print(sensorval)
-        time.sleep(1)
-    except KeyboardInterrupt  as ctrlc:
-        print(ctrlc)
-        exit()
+def loop():
+    while True:
+        try:
+            sensorval = read_temp()
+            print(sensorval)
+            time.sleep(1)
+        except KeyboardInterrupt  as ctrlc:
+            print(ctrlc)
+            exit()
+
+if __name__ == '__main__':
+    loop()
