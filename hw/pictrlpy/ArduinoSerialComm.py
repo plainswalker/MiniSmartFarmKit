@@ -20,7 +20,7 @@ def loop():
 
 def getsensorval():
     global ardubuff, buffidx
-    return ardubuff[buffidx]
+    return str(ardubuff[buffidx]).strip()
 
 if __name__ == '__main__':
     loop()

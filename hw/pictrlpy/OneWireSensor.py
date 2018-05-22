@@ -34,7 +34,7 @@ def read_temp():
 
 def getsensorval():
     global sensorval
-    return sensorval
+    return sensorval[0]
 
 def loop():
     global base_dir, device_file, device_folder, sensorval
