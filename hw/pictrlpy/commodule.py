@@ -18,12 +18,12 @@ uprate = 1
 inmodules = {} # modules : {'name' : module, ...}
 outmodules = {}
 
-def init(ims = [], oms = []): #ms : [(<name>, module), ...]
+def init(ims = [], oms = []):
     server.init()
     for m in ims:
-        inmodules[m[0]] = m[1]
+        inmodules[m.name()] = m
     for m in oms:
-        outmodules[m[0]] = m[1]
+        outmodules[m.name()] = m
     if __name__ == '__main__':
         run()
 
