@@ -8,7 +8,7 @@ def modules ():
 def run(name = ''):
     mds = modules()
     for md in mds :
-        if name == md.name():
+        if name == '' or name == md.name():
             try :
                 md.run()
             except Exception as e:

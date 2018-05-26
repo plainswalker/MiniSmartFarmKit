@@ -5,5 +5,7 @@ import commodule
 inputmodules.run()
 
 commodule.init(ims=inputmodules.modules(), oms=outputmodules.modules())
-
-commodule.run()
+try:
+    commodule.run()
+except KeyboardInterrupt:
+    exit()
