@@ -1,5 +1,6 @@
 import pyrebase
 import sys
+import datetime
 
 def setconfig(key=None, domain=None, URL=None, ID=None, storbuck=None, sender=None, accnt=None):
     global config
@@ -26,7 +27,7 @@ else :
     try :
         keyfile = open('.apikey', 'r')
         key = keyfile.readline().strip()
-    except FileNotFoundError :
+    except FileNotFoundError as e:
         print(datetime.datetime.now().replace(microsecond=0).isoformat() + ' : ' + str(e))
         pass
 
