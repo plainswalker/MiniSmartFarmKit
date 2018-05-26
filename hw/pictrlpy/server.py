@@ -27,6 +27,7 @@ else :
         keyfile = open('.apikey', 'r')
         key = keyfile.readline().strip()
     except FileNotFoundError :
+        print(datetime.datetime.now().replace(microsecond=0).isoformat() + ' : ' + str(e))
         pass
 
 config = {

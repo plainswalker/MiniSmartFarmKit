@@ -1,4 +1,5 @@
 import serial
+import datetime
 
 serialcomm = serial.Serial('/dev/ttyACM0', 9600)
 
@@ -20,7 +21,10 @@ def loop():
 
 def getsensorval():
     global ardubuff, buffidx
-    if ardubuff[buffidx] is not None: return int("".join(filter(str.isdigit, str(ardubuff[buffidx].strip()))))
-    else : return 0
+    try:
+        return int("".join(filter(str.isdigit, str(ardubuff[buffidx]))))
+    except Exception as e:
+        print(datetime.datetime.now().replace(microsecond=0).isoformat() + ' : ' + str(e))
+        return 0
 if __name__ == '__main__':
     loop()

@@ -8,11 +8,31 @@ def name():
     return "illuminance"
 
 sensorloop = threading.Thread(None,CdSphotoresistor.loop, 'thread_' +  name())
+threshold = 1500
+range = 1500
+currentstate = None
 
-def get():
+
+def setcond(thr = None, rng = None):
+    global threshold, range
+    if thr is not None:
+        threshold = thr
+    if range is not None:
+        range = rng
+
+def getval():
     if not sensorloop.is_alive():
         return None
     return CdSphotoresistor.getsensorval()
+
+def getstate():
+    if not sensorloop.is_alive():
+        return None
+    val = getval()
+    if val > threshold + range:
+        return 'bad'
+    else :
+        return 'good'
 
 def run():
     try:

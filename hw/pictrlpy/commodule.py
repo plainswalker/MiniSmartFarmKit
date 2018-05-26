@@ -25,7 +25,7 @@ def init(ims = [], oms = []):
     for m in oms:
         outmodules[m.name()] = m
     if __name__ == '__main__':
-        run()
+        loop()
 
 def get(key):
     return server.get(['Plants', key])
@@ -33,10 +33,12 @@ def get(key):
 def update():
     global id, numOfPlant, Plants
     for k in list(inmodules.keys()):
-        val = inmodules[k].get()
+        val = inmodules[k].getval()
+        state = inmodules[k].getstate()
         if val is not None:
-            server.set(['userFarm', id, 'Plants', '1', '0001', k], val)
-def run():
+            server.set(['userFarm', id, 'Plants', '1', '0001', k, 'sensorvalue'], val)
+            server.set(['userFarm', id, 'Plants', '1', '0001', k, 'status'], state)
+def loop():
     while True:
         update()
         time.sleep(1)
