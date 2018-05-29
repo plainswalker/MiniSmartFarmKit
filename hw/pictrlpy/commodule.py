@@ -36,8 +36,8 @@ def update():
         val = inmodules[k].getval()
         state = inmodules[k].getstate()
         if val is not None:
-            server.set(['userFarm', id, 'Plants', '1', '0001', k, 'sensorvalue'], val)
-            server.set(['userFarm', id, 'Plants', '1', '0001', k, 'status'], state)
+            server.set(['userFarm', id, k, 'sensorvalue'], val)
+            server.set(['userFarm', id, k, 'status'], state)
 def loop():
     while True:
         update()
