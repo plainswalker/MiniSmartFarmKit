@@ -1,8 +1,6 @@
 import sys
 
 import server
-import protocol
-
 import time
 
 if len(sys.argv) > 1:
