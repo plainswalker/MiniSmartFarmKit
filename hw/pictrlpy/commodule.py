@@ -1,7 +1,6 @@
 import sys
 
 import server
-
 import time
 
 if len(sys.argv) > 1:
