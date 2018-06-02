@@ -10,3 +10,5 @@ while True:
         commodule.update()
     except KeyboardInterrupt:
         exit()
+    except Exception as e:
+    	print(e)
