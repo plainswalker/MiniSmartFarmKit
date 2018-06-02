@@ -28,13 +28,13 @@ def setcond(thr = None, rng = None, dry = None, wet = None):
 def getval() :
     if not sensorloop.is_alive():
         return None
-    return ArduinoSerialComm.getsensorval()
+    ratio = 1.0 - (ArduinoSerialComm.getsensorval() - lo)/(hi - lo)
+    return round(ratio, 2)
 
 def getstate():
     if not sensorloop.is_alive():
         return None
-    val = getval()
-    ratio = 1.0 - (val - lo)/(hi - lo)
+    ratio = getval()
     if ratio > threshold + range or ratio < threshold - range:
         return 'bad'
     else :

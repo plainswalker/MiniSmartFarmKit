@@ -1,7 +1,6 @@
 import sys
 
 import server
-import protocol
 
 import time
 
