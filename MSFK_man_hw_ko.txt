@@ -1,32 +1,37 @@
-Usage(¿ÏÁ¦Ç°)
- * ¼¾¼­¸¦ ÀûÀıÇÑ À§Ä¡¿¡ ¹èÄ¡(ºµÀÌ Àß µå´Â °÷ µî) / Åä¾ç ½Àµµ ¼¾¼­¸¦ ÀÛ¹° ±ÙÃ³ Èë¿¡ ²È±â
- * ¶óÁîº£¸® ÆÄÀÌ Àü¿ø ¿¬°á
- * ÁÖÀÇ»çÇ× :
-  * °ø°³ wi-fi ³×Æ®¿öÅ©°¡ ÁÖº¯¿¡ ÀÖ¾î¾ß ÇÔ (³×Æ®¿öÅ© ¼³Á¤Àº installation ÂüÁ¶)
-  * ¼¾¼­ È¸·ÎºÎ°¡ ¹°¿¡ ´êÁö ¾Êµµ·Ï ÁÖÀÇ(Àı¿¬ Å×ÀÌÇÁ µîÀ¸·Î º¸È£ÇÏ´Â °ÍÀ» ±ÇÀå)
+Usage(ì™„ì œí’ˆ)
+ * ì„¼ì„œë¥¼ ì ì ˆí•œ ìœ„ì¹˜ì— ë°°ì¹˜(ë³•ì´ ì˜ ë“œëŠ” ê³³ ë“±) / í† ì–‘ ìŠµë„ ì„¼ì„œë¥¼ ì‘ë¬¼ ê·¼ì²˜ í™ì— ê½‚ê¸°
+ * ë¼ì¦ˆë² ë¦¬ íŒŒì´ ì „ì› ì—°ê²°
+ * ì£¼ì˜ì‚¬í•­ :
+  * ê³µê°œ wi-fi ë„¤íŠ¸ì›Œí¬ê°€ ì£¼ë³€ì— ìˆì–´ì•¼ í•¨ (ë„¤íŠ¸ì›Œí¬ ì„¤ì •ì€ installation ì°¸ì¡°)
+  * ì„¼ì„œ íšŒë¡œë¶€ê°€ ë¬¼ì— ë‹¿ì§€ ì•Šë„ë¡ ì£¼ì˜(ì ˆì—° í…Œì´í”„ ë“±ìœ¼ë¡œ ë³´í˜¸í•˜ëŠ” ê²ƒì„ ê¶Œì¥)
 Requirements : 
  * Device(recommanded) : Raspberry Pi Model3B / Arduino Mega
  * OS(recommanded) : Raspbian 9(Stretch) / linux kernel version 4.14.30
  * python3 3.5.3 (recommanded)
  * pip 10.0.1 (recommanded)
 Installation :
- * ¶óÁîº£¸®ÆÄÀÌ¿¡ OS¸¦ ¼³Ä¡ÇÑ SD Ä«µå Á¢¼Ó
-  * OS image ¼³Ä¡¹ı : https://www.raspberrypi.org/documentation/installation/installing-images/README.md
- * È¸·Î ±¸¼º
- * ÀÎÅÍ³İ ¿¬°á
-  * wi-fi ¿¬°á¹ı : https://www.raspberrypi.org/documentation/configuration/wireless/desktop.md (GUI)
+ * ë¼ì¦ˆë² ë¦¬íŒŒì´ì— OSë¥¼ ì„¤ì¹˜í•œ SD ì¹´ë“œ ì ‘ì†
+  * OS image ì„¤ì¹˜ë²• : https://www.raspberrypi.org/documentation/installation/installing-images/README.md
+ * íšŒë¡œ êµ¬ì„±
+ * ì¸í„°ë„· ì—°ê²°
+  * wi-fi ì—°ê²°ë²• : https://www.raspberrypi.org/documentation/configuration/wireless/desktop.md (GUI)
                    : https://www.raspberrypi.org/documentation/configuration/wireless/wireless-cli.md (CLI terminal)
- * python3 ¼³Ä¡ :
-  * ÅÍ¹Ì³Î ¸í·É¾î : sudo apt-get install python3
- * python library ¼³Ä¡
+ * python3 ì„¤ì¹˜ :
+  * í„°ë¯¸ë„ ëª…ë ¹ì–´ : sudo apt-get install python3
+ * python library ì„¤ì¹˜
   * sudo pip install pyserial pyrebase 
- * ¿Âµµ ¼¾¼­ ¼³Á¤ : /boot/config.txt ¸¶Áö¸·ÁÙ¿¡ 'dtoverlay=w1-gpio' Ãß°¡ ÈÄ ÀçºÎÆÃ
-  * ÅÍ¹Ì³Î ¸í·É¾î : sudo echo 'dtoverlay=w1-gpio' >> /boot/config.txt
+ * ì˜¨ë„ ì„¼ì„œ ì„¤ì • : /boot/config.txt ë§ˆì§€ë§‰ì¤„ì— 'dtoverlay=w1-gpio' ì¶”ê°€ í›„ ì¬ë¶€íŒ…
+  * í„°ë¯¸ë„ ëª…ë ¹ì–´ : sudo echo 'dtoverlay=w1-gpio' >> /boot/config.txt
                         sudo reboot
- * firebase api key¸¦ ½ÇÇà À§Ä¡ ¾Æ·¡ .apikeyÆÄÀÏ¿¡ ÀÛ¼ºÇÏ¿© ÀúÀå
- * source code¸¦ ÀûÀıÇÑ °æ·Î¿¡ ¼³Ä¡ (home path ÃßÃµ)
+ * firebase api keyë¥¼ ì‹¤í–‰ ìœ„ì¹˜ ì•„ë˜ .apikeyíŒŒì¼ì— ì‘ì„±í•˜ì—¬ ì €ì¥
+ * source codeë¥¼ ì ì ˆí•œ ê²½ë¡œì— ì„¤ì¹˜ (home path ì¶”ì²œ)
   * git clone https://github.com/capstone1801-CapstoneMaster/MiniSmartFarmKit.git
- * (optional) ¶óÁîº£¸®ÆÄÀÌ ºÎÆÃ ½Ã ÀÚµ¿ ½ÇÇà :  /etc/rc.local ¿¡ ½ÇÇà ÄÚµå Ãß°¡
+ * arduino ê¸°ê¸°ì— arduino ì œì–´ ì½”ë“œ ì„¤ì¹˜(hw/ardctrl/arduino_moisture_code.c)
+  * arduino IDE ì„¤ì¹˜ : https://www.arduino.cc/en/Main/Software
+  * arduino ì‚¬ìš© ê°€ì´ë“œ : https://www.arduino.cc/en/Guide/HomePage
+  * arduino IDE ì‚¬ìš© ê°€ì´ë“œ : https://www.arduino.cc/en/Guide/Environment
+  * arduino ì„¤ì¹˜ ë° ì½”ë“œ ì„¤ì¹˜ëŠ” ë³„ë„ì˜ PC ì‚¬ìš©ì„ ê¶Œì¥í•¨
+ * (optional) ë¼ì¦ˆë² ë¦¬íŒŒì´ ë¶€íŒ… ì‹œ ìë™ ì‹¤í–‰ :  /etc/rc.local ì— ì‹¤í–‰ ì½”ë“œ ì¶”ê°€
   * sudo sed -i '/exit 0/i cd /home/pi\npython3 /home/pi/MiniSmartFarmKit/hw/pictrlpy/pictrl.py test01 &' /etc/rc.local
 Excution :
  * python3 ~/MiniSmartFarmKit/hw/pictrlpy/pictrl.py <your_serial_number>
